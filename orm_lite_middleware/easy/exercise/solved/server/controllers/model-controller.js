@@ -1,6 +1,13 @@
+//requiring my models to be used in this file
 var models = require('./../models');
 
+//exporting this file to be used somewhere else...route-controller.js file
 module.exports = {
+	//naming my exported functions appropriately
+	//just calling my model queries here instead of the route-controller.js file
+	
+	//cleans up your files a little bit, and lets you and others reading your code know where
+	//to look for your database queries and where to look for your routes
 	getAllUsers: (cb) => {
 		models.User.findAll({
 			attributes: ['name', 'username']

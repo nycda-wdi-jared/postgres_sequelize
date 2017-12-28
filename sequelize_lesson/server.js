@@ -36,12 +36,12 @@ models.sequelize.sync();
 // 	console.log(data)
 // })
 
-models.Song.findOne({where: {title: "goodbye"}}).then(function(song){
+// models.Song.findOne({where: {title: "goodbye"}}).then(function(song){
 
-	for(var i = 0; i < song.length: i++){
+// 	for(var i = 0; i < song.length: i++){
 
-	}
-})
+// 	}
+// })
 
 var PORT = process.env.PORT || 8000;
 

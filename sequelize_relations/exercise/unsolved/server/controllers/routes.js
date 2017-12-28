@@ -13,9 +13,28 @@ router.get('/get-users', function(req,res){
 	});
 });
 
-/* 
-	write your many to many relation here
-*/
+router.get('/user/friends/:id', function(req,res){
+	models.Friend.findAll({
+		where: {
+			$or: [
+				{
+					user_id_1:
+						{
+							$eq: req.params.id
+						}
+				},
+				{
+					user_id_2:
+						{
+							$eq: req.params.id
+						}
+				}
+			]
+		}
+	}).then((friends) => {
+		res.json(friends)
+	})
+});
 
 //since no client, here are my post routes to make life easier
 
@@ -28,7 +47,16 @@ router.post('/create-user', (req,res) => {
 });
 
 router.post('/create-friend', (req,res) => {
-	/* write your sequelize create here */
+	if(req.body.user_id_1 !== req.body.user_id_2){
+		models.Friend.create({
+			user_id_1: req.body.user_id_1,
+			user_id_2: req.body.user_id_2
+		}).then((friend) => {
+			res.send("Friendship Created")
+		})
+	} else {
+		res.send("You can't be friends with yourself")
+	}
 });
 
 module.exports = router;

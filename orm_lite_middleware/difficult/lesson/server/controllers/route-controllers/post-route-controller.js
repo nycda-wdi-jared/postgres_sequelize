@@ -1,6 +1,8 @@
 var mc = require('./../model-controller.js');
 var Post = require('./../../models').Post;
 
+//routes for only my Post model
+//look at the generic routes being used from the model-controller.js file
 module.exports.controller = (app) => {
 	app.get('/posts', (req, res) => {
 		mc.findAll(Post, (results) => {
@@ -9,19 +11,29 @@ module.exports.controller = (app) => {
 	})
 
 	app.get('/post/:id', (req, res) => {
-		mc.findOneWhere(Post, {id: req.params.id}, (results) => {
+		var data = {
+			id: req.params.id
+		}
+		mc.findOneWhere(Post, data, (results) => {
 			res.json(results)
 		});
 	})
 
 	app.get('/user-posts/:id', (req, res) => {
-		mc.findAllWhere(Post, {user_id: req.params.id}, (results) => {
+		var data = {
+			user_id: req.params.id
+		}
+		mc.findAllWhere(Post, data, (results) => {
 			res.json(results)
 		});
 	})
 
 	app.post('/add-post', (req, res) => {
-		mc.insertInto(Post, {message: req.body.message, userID: parseInt(req.body.userID)}, (results) => {
+		var data = {
+			message: req.body.message, 
+			userID: parseInt(req.body.userID)
+		}
+		mc.insertInto(Post, data, (results) => {
 			res.json(results.dataValues)
 		});
 	});

@@ -1,3 +1,4 @@
+//creating generic routes that can be used for all models
 module.exports = {
 	findAll: function(table, cb){
 		table.findAll({}).then((res) => {
@@ -28,37 +29,3 @@ module.exports = {
 		});
 	}
 }
-
-// var arr = [{
-// 	message: "yo",
-// 	userID: 1
-// },{
-// 	message: "you",
-// 	userID: 1
-// }]
-
-// for(var i = 0; i < arr.length; i++){
-// 	models.Post.create(arr[i]);
-// }
-
-// models.Song.create({
-// 	title: "x",
-// 	artist: "y",
-// 	lyrics: "z"
-// })
-
-// models.UserSong.create({
-// 	userID: 1,
-// 	songID: 1
-// })
-
-// models.Profile.create({
-// 	fav_veggie: "broccoli",
-// 	fav_fruit: "pineapple",
-// 	userID: 1
-// })
-
-// models.Post.create({
-// 	message: "yo",
-// 	userID: 1
-// })

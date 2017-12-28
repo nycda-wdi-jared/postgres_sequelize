@@ -13,7 +13,8 @@ module.exports = function(sequelize, DataTypes) {
         key: 'id'
       },
       field: 'user_id_1',
-      allowNull: false
+      allowNull: false,
+      unique: 'compositeIndex'
     },
     user_id_2: {
       type: DataTypes.INTEGER(11).UNSIGNED,
@@ -22,7 +23,8 @@ module.exports = function(sequelize, DataTypes) {
         key: 'id'
       },
       field: 'user_id_2',
-      allowNull: false
+      allowNull: false,
+      unique: 'compositeIndex'
     }
   }, {
     classMethods: {

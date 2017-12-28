@@ -33,7 +33,10 @@ router.get('/user/posts/:id', (req,res) => {
 //the best way i came up with. There might be a better looking way
 //try to better this
 router.get('/user/songs/:id', (req,res) => {
-	models.UserSong.findAll({where: {userID: req.params.id}}).then(function(user){
+	models.UserSong.findAll({
+		attributes: ['songID'],
+		where: {userID: req.params.id}
+	}).then(function(user){
 		var arr = [];
 		for(var i = 0; i < user.length; i++){
 			arr.push(user[i].songID)
