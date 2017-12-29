@@ -10,8 +10,19 @@ var models = require('./../models');
 var users = new Table(models.User);
 
 users.getAll((res) => {
-	console.log(res)
+	// console.log(res)
 })
+
+
+// Object.prototype.queryAll = function(cb){
+// 	this.findAll({}).then(function(res){
+// 		cb(res);
+// 	})
+// }
+
+// models.User.queryAll((res) => {
+// 	console.log(res)
+// });
 
 router.get('/get-users', function(req,res){
 	//look in the model-controller.js file to see what this imported function is supposed to do
