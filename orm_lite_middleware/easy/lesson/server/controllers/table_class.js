@@ -1,5 +1,3 @@
-var models = require('./../models');
-
 module.exports = 
 class Table {
 	constructor(table) {
