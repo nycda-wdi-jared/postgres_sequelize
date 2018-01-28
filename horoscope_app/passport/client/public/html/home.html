@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Horoscope App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/home.css">
+</head>
+<body>
+	<nav id="horo-nav" class="navbar navbar-toggleable-md navbar-light bg-faded">
+		<div class="row">
+			<div class="col-md-9">
+			</div>
+			<div class="col-md-3" id="nav-right" style="padding: 10px;">
+				<a id="sign-up-nav" href="#" class="nav-text">Sign-Up</a>
+				<a id="sign-in-nav" href="#" class="nav-text">Sign-In</a>
+			</div>
+		</div>
+	</nav>
+	<h1 id="header-title" class="text-center">Welcome to the horoscope app</h1>
+	<br>
+	<div id="horoscope-form-div" class="text-center center-block well" style="display: table;">
+		<form id="horoscope-form">
+			<label>Name</label><br>
+			<input type="text" id="name-input"/><br>
+			<label>Birthdate</label><br>
+			<input type="date" id="birthdate-input" />
+			<br>
+			<input class="btn btn-secondary" id="submit-this" type="submit">
+		</form>
+	</div>
+	<br>
+	<div class="text-center center-block" id="select-div">
+		<select id="zodiac-input">
+			<option value="" selected disabled hidden>Choose here</option>
+			<option value="all">All Zodiacs</option>
+			<option value="aquarius">Aquarius</option>
+			<option value="aries">Aries</option>
+			<option value="cancer">Cancer</option>
+			<option value="capricorn">Capricorn</option>
+			<option value="gemini">Gemini</option>
+			<option value="libra">Libra</option>
+			<option value="leo">Leo</option>
+			<option value="pisces">Pisces</option>
+			<option value="sagittarius">Sagittarius</option>
+			<option value="scorpio">Scorpio</option>
+			<option value="taurus">Taurus</option>
+			<option value="virgo">Virgo</option>
+		</select>
+	</div>
+	<div id="nav-button-div"></div>
+	<br>
+	<div id="user-table-div" class="row"></div>
+	<div id="sign-in-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content text-center">
+				<div class="modal-header">
+					<h2>Sign In</h2>
+				</div>
+				<div class = "modal-body">
+					<form id="sign-in-form">
+						<label>Username</label><br>
+						<input type="text" id="sign-in-username-input"/><br>
+						<label>Password</label><br>
+						<input type="password" id="sign-in-password-input"/><br><br>
+						<input class="btn btn-danger" type="submit">
+					</form>
+				</div>
+				<div class = "modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sign-up-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content text-center">
+				<div class="modal-header">
+					<h2>Sign Up</h2>
+				</div>
+				<div class="modal-body">
+					<form id="sign-up-form">
+						<label>Name</label><br>
+						<input type="text" id="sign-up-name-input"/><br>
+						<label>Username</label><br>
+						<input type="text" id="sign-up-username-input"/><br>
+						<label>Birth Date</label><br>
+						<input type="date" id="sign-up-birthdate-input"/><br><br>
+						<label>Password</label><br>
+						<input type="password" id="sign-up-password-input"/><br><br>
+						<label>Confirm Password</label><br>
+						<input type="password" id="sign-up-confirm-password-input"/><br><br>
+						<input class="btn btn-danger" type="submit">
+					</form>
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./public/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+h1 {
+	color: blue;
+	font-size: 36px;
+}
+
+#users-table {
+	width: 33%;
+}
+
+#submit-this {
+	border: solid;
+	margin: 5px;
+	border-width: 2px;
+}
+
+#nav-button {
+	width: 10%;
+}
